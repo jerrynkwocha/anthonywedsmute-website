@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Okiemute & Anthony – Wedding, December 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+/* ============ 1. COLORS & FONTS – edit these ============ */
+:root{
+  --ink:#2a1f20;          /* main text */
+  --paper:#fffefd;        /* page background */
+  --tint:#f5f2f0;        /* alternate section background */
+  --accent:#8f1a24;       /* burgundy: buttons, links, names */
+  --gold:#e59a1c;         /* gold lines from the invitation */
+  --line:#ddd6d2;         /* borders */
+  --script:"Pinyon Script","Brush Script MT",cursive;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 17px/1.65 var(--sans);color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:.4em}
+p{max-width:62ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+section{padding:88px 24px}
+.wrap{max-width:1000px;margin:0 auto}
+.alt{background:var(--tint)}
+.lead{font-family:var(--serif);font-size:1.3rem;margin-bottom:2rem}
+
+/* Photo placeholders: add style="background-image:url('your-photo.jpg')" to any .photo */
+.photo{background:var(--line) center/cover no-repeat;display:grid;place-items:center;color:#7a6f6b;font-size:.9rem;min-height:240px;border-radius:4px}
+.photo[style*="url"]{color:transparent}
+
+nav{position:sticky;top:0;z-index:5;background:rgba(255,254,253,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:12px 24px;display:flex;gap:22px;overflow-x:auto;white-space:nowrap;justify-content:center}
+nav a{text-decoration:none;color:var(--ink);font-size:.95rem}
+nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{min-height:88vh;display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:48px;max-width:1100px;margin:0 auto;padding:64px 24px}
+.hero h1{font-family:var(--script);font-weight:400;color:var(--accent);font-size:clamp(2.8rem,7.5vw,5.2rem);line-height:1.15}
+.hero .amp{display:flex;align-items:center;gap:14px;font:400 1rem var(--sans);color:var(--gold);max-width:260px;margin:.3rem 0}
+.hero .amp:before,.hero .amp:after{content:"";flex:1;height:1px;background:var(--gold)}
+.hero .meta{margin-top:1.2rem;font-size:1.15rem}
+.hero .photo{min-height:520px;border-radius:200px 200px 4px 4px}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:0;padding:14px 28px;border-radius:4px;font:500 1rem var(--sans);text-decoration:none;cursor:pointer;margin-top:1.4rem}
+.btn:hover{filter:brightness(1.15)}
+.btn.small{padding:9px 18px;font-size:.9rem;margin-top:1rem}
+
+/* invitation text */
+.invite{text-align:center;padding:64px 24px}
+.invite p{margin:0 auto;font-family:var(--serif);font-size:1.25rem}
+.invite .and{color:var(--gold);margin:.6rem auto;font-family:var(--sans);font-size:1rem}
+.invite .small{font-size:1rem;margin:1.4rem auto .2rem}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story .photo{min-height:380px}
+.story p+p{margin-top:1em}
+
+/* schedule */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:2rem}
+.event{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;padding:26px}
+.event .icon{width:44px;height:44px;color:var(--accent);margin-bottom:.6rem}
+.icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.event h3{font-size:1.7rem;margin-bottom:.5rem}
+.event dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.98rem}
+.event dt{color:#7a6f6b}
+.event dd{margin:0}
+.dress{margin-top:2.5rem;padding:24px;border-left:4px solid var(--gold);background:var(--tint)}
+.swatches{display:flex;gap:22px;margin-top:14px;flex-wrap:wrap}
+.swatches figure{text-align:center;font-size:.9rem}
+.swatches i{display:block;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);margin:0 auto 6px}
+
+/* location */
+.venues{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:1.5rem}
+.venue{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px}
+.venue h3{font-size:1.5rem;margin-bottom:.3rem}
+.mapbox{margin-top:1.5rem;border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--line)}
+.mapbox iframe{width:100%;height:380px;border:0;display:block}
+.mapbox .ph{display:grid;place-items:center;min-height:200px;color:#7a6f6b;padding:24px;text-align:center}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.5rem}
+.gallery .photo{aspect-ratio:1;min-height:0}
+.gallery .photo:nth-child(1),.gallery .photo:nth-child(6){grid-row:span 2;aspect-ratio:auto}
+
+/* forms */
+form{display:grid;gap:16px;max-width:520px;margin-top:1.5rem}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+fieldset{border:0;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+fieldset label{display:flex;align-items:center;gap:8px;font-weight:400}
+.status{min-height:1.5em;font-size:.95rem}
+.call{margin-top:1.8rem}
+
+/* guestbook */
+.notes{display:grid;gap:14px;margin-top:2rem;max-width:620px}
+.note{background:var(--tint);padding:18px 20px;border-radius:6px}
+.note b{display:block;margin-top:6px;font-size:.9rem}
+
+/* gifts */
+.gifts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:2rem}
+.gift{border:1px solid var(--line);border-radius:6px;background:var(--paper);display:flex;flex-direction:column;overflow:hidden}
+.gift .photo{min-height:0;height:150px;border-radius:0}
+.gift .body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
+.gift h3{font-size:1.5rem}
+.gift .price{font-family:var(--serif);font-size:1.6rem;margin:.2rem 0 .5rem}
+.gift .btn{margin-top:auto;text-align:center}
+.bank{margin-top:2rem;padding:20px;border:1px dashed var(--line);border-radius:6px;max-width:520px;background:var(--paper)}
+
+footer{text-align:center;padding:48px 24px;font-family:var(--serif);font-size:1.3rem}
+footer .script{font-family:var(--script);font-size:2.2rem;color:var(--accent);display:block}
+footer small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.85rem;color:#7a6f6b}
+
+@media (max-width:760px){
+  section{padding:64px 20px}
+  .hero,.story{grid-template-columns:1fr}
+  .hero{min-height:0;padding-top:32px}
+  .hero .photo{min-height:380px;order:-1}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  nav{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <a href="#story">Our story</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#location">Location</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#rsvp">RSVP</a>
+  <a href="#guestbook">Guestbook</a>
+  <a href="#gifts">Gifts</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div>
+    <h1>Okiemute Iyomi <span class="amp">and</span> Anthony Oyovwikefe</h1>
+    <p class="meta">Thursday 17th and Saturday 19th December 2026<br>Abraka and Effurun, Delta State</p>
+    <a class="btn" href="#rsvp">RSVP now</a>
+  </div>
+  <!-- Replace with: style="background-image:url('hero.jpg')" -->
+  <div class="photo" role="img" aria-label="Couple photo">Couple photo placeholder</div>
+</header>
+
+<!-- ============ INVITATION TEXT ============ -->
+<section class="invite alt">
+  <p>The families of<br>Late Chief Michael Odemero and Mrs. Mercy Iyomi of Oruarivie-Abraka, Ethiope-East LGA, Delta State</p>
+  <p class="and">and</p>
+  <p>Mr. Moses and Mrs. Ejiro Oyovwikefe of Okurekpo-Okpara I/Land in Agbon, Ethiope East LGA, Delta State</p>
+  <p class="small">cordially invite you to the wedding ceremony of their children. Strictly by invitation.</p>
+</section>
+
+<!-- ============ OUR STORY ============ -->
+<section id="story">
+  <div class="wrap story">
+    <div class="photo" role="img" aria-label="Story photo">Story photo placeholder</div>
+    <div>
+      <h2>Our story</h2>
+      <p>[How Okiemute and Anthony met. Two or three sentences.]</p>
+      <p>[How the relationship grew, and the proposal.]</p>
+      <p>[A line inviting guests to celebrate with them.]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section id="schedule" class="alt">
+  <div class="wrap">
+    <h2>Schedule of events</h2>
+    <p class="lead">Two days of celebration. Here is what to expect.</p>
+    <div class="events">
+      <article class="event">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22c0-5 .5-8 1-11"/><path d="M13 11c-1-3-4-4.5-8-4"/><path d="M13 11c0-3 1-5.5 4-7"/><path d="M13 11c2-2 5-2.5 7-1.5"/><path d="M13 11c-3-.5-5 1-6 3"/></svg></div>
+        <h3>Traditional wedding</h3>
+        <dl>
+          <dt>Date</dt><dd>Thursday, 17 December 2026</dd>
+          <dt>Time</dt><dd>11am</dd>
+          <dt>Venue</dt><dd>Bride’s Father’s Compound, Abraka</dd>
+        </dl>
+      </article>
+      <article class="event">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4M10 3.8h4"/><path d="M12 6l6 4v11H6V10l6-4z"/><path d="M10 21v-5a2 2 0 0 1 4 0v5"/></svg></div>
+        <h3>Church wedding</h3>
+        <dl>
+          <dt>Date</dt><dd>Saturday, 19 December 2026</dd>
+          <dt>Time</dt><dd>10am</dd>
+          <dt>Venue</dt><dd>Banner of Grace Baptist Church, Niemogha Street, Okuisoko, off Jakpa Road, Effurun</dd>
+        </dl>
+      </article>
+      <article class="event">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10v4a5 5 0 0 1-10 0V3z"/><path d="M12 12v8M8 21h8"/></svg></div>
+        <h3>Reception</h3>
+        <dl>
+          <dt>Date</dt><dd>Saturday, 19 December 2026</dd>
+          <dt>Time</dt><dd>Follows the church wedding</dd>
+          <dt>Venue</dt><dd>KFT Place, along NNPC Housing Complex Road, off Airport Road, Effurun</dd>
+        </dl>
+      </article>
+    </div>
+    <div class="dress">
+      <h3>Colour of the day</h3>
+      <div class="swatches">
+        <figure><i style="background:#8f1a24"></i>Burgundy</figure>
+        <figure><i style="background:#a9a883"></i>Sage</figure>
+        <figure><i style="background:#e6c3a0"></i>Beige</figure>
+        <figure><i style="background:#9b9491"></i>Grey</figure>
+      </div>
+      <p style="margin-top:1rem">[Optional: aso ebi details, where to buy it, and who to contact.]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section id="location">
+  <div class="wrap">
+    <h2>Location</h2>
+    <p class="lead">Tap a venue to open it in Google Maps.</p>
+    <div class="venues">
+      <div class="venue">
+        <h3>Traditional wedding</h3>
+        <p>Bride’s Father’s Compound, Abraka</p>
+        <a class="btn small" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Abraka%2C+Delta+State">Open in Maps</a>
+      </div>
+      <div class="venue">
+        <h3>Church wedding</h3>
+        <p>Banner of Grace Baptist Church, Niemogha Street, Okuisoko, off Jakpa Road, Effurun</p>
+        <a class="btn small" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Banner+of+Grace+Baptist+Church+Okuisoko+Effurun">Open in Maps</a>
+      </div>
+      <div class="venue">
+        <h3>Reception</h3>
+        <p>KFT Place, along NNPC Housing Complex Road, off Airport Road, Effurun</p>
+        <a class="btn small" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=KFT+Place+Effurun">Open in Maps</a>
+      </div>
+    </div>
+    <div class="mapbox">
+      <!-- Optional: Google Maps > Share > Embed a map > paste the iframe in place of the .ph div -->
+      <div class="ph">Google Maps embed placeholder</div>
+    </div>
+    <p style="margin-top:1.2rem">[Optional: directions tips, parking, nearby hotels.]</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="alt">
+  <div class="wrap">
+    <h2>Gallery</h2>
+    <p>[Optional line. After the wedding, swap these for event photos.]</p>
+    <div class="gallery">
+      <div class="photo" role="img" aria-label="Gallery photo 1">Photo 1</div>
+      <div class="photo" role="img" aria-label="Gallery photo 2">Photo 2</div>
+      <div class="photo" role="img" aria-label="Gallery photo 3">Photo 3</div>
+      <div class="photo" role="img" aria-label="Gallery photo 4">Photo 4</div>
+      <div class="photo" role="img" aria-label="Gallery photo 5">Photo 5</div>
+      <div class="photo" role="img" aria-label="Gallery photo 6">Photo 6</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section id="rsvp">
+  <div class="wrap">
+    <h2>RSVP</h2>
+    <p>Please let us know if you can make it. [Add RSVP deadline.]</p>
+    <form id="rsvpForm">
+      <label>Full name <input name="name" required autocomplete="name"></label>
+      <label>Phone or email <input name="contact" required></label>
+      <fieldset>
+        <legend style="font-weight:500;margin-bottom:6px">Will you attend?</legend>
+        <label><input type="radio" name="response" value="Yes" required> Yes</label>
+        <label><input type="radio" name="response" value="No"> No</label>
+        <label><input type="radio" name="response" value="Maybe"> Maybe</label>
+      </fieldset>
+      <label>Number of guests (including you)
+        <select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+      </label>
+      <label>Anything we should know?
+        <textarea name="note" rows="3"></textarea>
+      </label>
+      <button class="btn" type="submit">Send RSVP</button>
+      <p class="status" id="rsvpStatus" role="status"></p>
+    </form>
+    <p class="call">Prefer to call? <a href="tel:08053255304">Tejiri: 08053255304</a> or <a href="tel:07042710299">Eric: 07042710299</a></p>
+  </div>
+</section>
+
+<!-- ============ GUESTBOOK ============ -->
+<section id="guestbook" class="alt">
+  <div class="wrap">
+    <h2>Guestbook</h2>
+    <p>Leave a message for Okiemute and Anthony.</p>
+    <form id="gbForm">
+      <label>Your name <input name="name" required></label>
+      <label>Your message <textarea name="message" rows="4" required maxlength="600"></textarea></label>
+      <button class="btn" type="submit">Post message</button>
+      <p class="status" id="gbStatus" role="status"></p>
+    </form>
+    <div class="notes" id="notes"></div>
+  </div>
+</section>
+
+<!-- ============ GIFTS ============ -->
+<section id="gifts">
+  <div class="wrap">
+    <h2>Wish list</h2>
+    <p>We kindly ask that all gifts be monetary. Choose an item to contribute towards, or give any amount.</p>
+    <div class="gifts">
+      <!-- Item photo: add style="background-image:url('item.jpg')" to the .photo. Button: paste your Paystack/Flutterwave payment link in href. Copy or delete cards as needed -->
+      <div class="gift">
+        <div class="photo" role="img" aria-label="Gift photo">Item photo</div>
+        <div class="body"><h3>[Gift name]</h3><div class="price">₦[Amount]</div><p>[Short description]</p><a class="btn" href="#" target="_blank" rel="noopener">Give this gift</a></div>
+      </div>
+      <div class="gift">
+        <div class="photo" role="img" aria-label="Gift photo">Item photo</div>
+        <div class="body"><h3>[Gift name]</h3><div class="price">₦[Amount]</div><p>[Short description]</p><a class="btn" href="#" target="_blank" rel="noopener">Give this gift</a></div>
+      </div>
+      <div class="gift">
+        <div class="photo" role="img" aria-label="Gift photo">Item photo</div>
+        <div class="body"><h3>Any amount</h3><div class="price">₦[You choose]</div><p>Give what feels right.</p><a class="btn" href="#" target="_blank" rel="noopener">Contribute</a></div>
+      </div>
+    </div>
+    <div class="bank">
+      <h3>Prefer bank transfer?</h3>
+      <p>[Bank name] · [Account name] · [Account number]</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="script">Okiemute &amp; Anthony</span>
+  17 and 19 December 2026
+  <small>Strictly by invitation</small>
+</footer>
+
+<script>
+/* ============ 2. CONNECT TO GOOGLE SHEETS – paste your Apps Script web app URL (ends in /exec) ============ */
+const SHEET_URL = "";   // one URL handles RSVPs and guestbook; leave empty until it is ready
+
+const $ = s => document.querySelector(s);
+
+function send(type, data){
+  return fetch(SHEET_URL, {
+    method:"POST", mode:"no-cors",
+    headers:{"Content-Type":"text/plain"},
+    body:JSON.stringify({type, ...data})
+  });
+}
+
+function bind(formId, statusId, type, okText, after){
+  $(formId).addEventListener("submit", async e => {
+    e.preventDefault();
+    const st = $(statusId), form = e.target;
+    if(!SHEET_URL){ st.textContent = "This form isn’t connected yet."; return; }
+    st.textContent = "Sending…";
+    try{
+      await send(type, Object.fromEntries(new FormData(form)));
+      st.textContent = okText; form.reset();
+      if(after) setTimeout(after, 2500);
+    }catch(err){ st.textContent = "Something went wrong. Please try again."; }
+  });
+}
+
+bind("#rsvpForm","#rsvpStatus","rsvp","Thank you! Your RSVP has been received.");
+bind("#gbForm","#gbStatus","guestbook","Thank you! Your message has been posted.", loadNotes);
+
+async function loadNotes(){
+  const box = $("#notes");
+  if(!SHEET_URL){ box.innerHTML = ""; return; }
+  try{
+    const res = await fetch(SHEET_URL + "?type=guestbook");
+    const list = await res.json();
+    box.innerHTML = "";
+    list.forEach(n => {
+      const d = document.createElement("div"); d.className = "note";
+      const p = document.createElement("p"); p.textContent = n.message;
+      const b = document.createElement("b"); b.textContent = n.name;
+      d.append(p,b); box.append(d);
+    });
+  }catch(err){ /* leave empty if the sheet isn’t reachable */ }
+}
+loadNotes();
+</script>
+</body>
+</html>
