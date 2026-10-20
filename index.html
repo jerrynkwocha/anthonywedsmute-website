@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Okiemute & Anthony – Wedding, December 2026</title>
+
+<!-- ============ LINK PREVIEW (the thumbnail shown when the link is shared on WhatsApp, Facebook, etc.) ============
+     Replace the two YOUR-... values below. The image link must be a full https:// link. -->
+<meta name="description" content="You are invited to the wedding of Okiemute Iyomi and Anthony Oyovwikefe, 17 and 19 December 2026.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Okiemute & Anthony – Wedding, December 2026">
+<meta property="og:description" content="You are invited. RSVP, find the venues, and leave a message for the couple.">
+<meta property="og:image" content="https://github.com/jerrynkwocha/anthonywedsmute-website/blob/main/invitation-1.jpg">
+<meta property="og:url" content="https://github.com/jerrynkwocha/anthonywedsmute-website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -57,6 +67,11 @@ nav a:hover{color:var(--accent)}
 .invite p{margin:0 auto;font-family:var(--serif);font-size:1.25rem}
 .invite .and{color:var(--gold);margin:.6rem auto;font-family:var(--sans);font-size:1rem}
 .invite .small{font-size:1rem;margin:1.4rem auto .2rem}
+
+/* invitation card */
+.card{margin:2.4rem auto 0;max-width:420px}
+.card img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.card .btn{margin-top:1.2rem}
 
 /* story */
 .story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -151,6 +166,13 @@ footer small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.8
   <p class="and">and</p>
   <p>Mr. Moses and Mrs. Ejiro Oyovwikefe of Okurekpo-Okpara I/Land in Agbon, Ethiope East LGA, Delta State</p>
   <p class="small">cordially invite you to the wedding ceremony of their children. Strictly by invitation.</p>
+  <!-- Put your invitation image in the same folder as this file and name it invitation.jpg (or change the name in all 3 places below) -->
+  <figure class="card">
+    <a href="invitation.jpg" target="_blank" rel="noopener" aria-label="Open the invitation full size">
+      <img src="invitation.jpg" alt="Wedding invitation of Okiemute Iyomi and Anthony Oyovwikefe, 17 and 19 December 2026" loading="lazy">
+    </a>
+    <a class="btn" href="invitation.jpg" download="Okiemute-and-Anthony-Invitation.jpg">Download invitation</a>
+  </figure>
 </section>
 
 <!-- ============ OUR STORY ============ -->
