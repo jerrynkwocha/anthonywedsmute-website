@@ -77,6 +77,10 @@ nav a:hover{color:var(--accent)}
 .story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .story .photo{min-height:380px}
 .story p+p{margin-top:1em}
+.story-text h3{font:500 .8rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:1.8rem 0 .5rem}
+.story-text h2+h3{margin-top:.6rem}
+.story-text .closing{margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.oath{font-family:var(--script);font-size:1.7rem;color:var(--accent);line-height:1}
 
 /* schedule */
 .events{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:2rem}
@@ -214,11 +218,21 @@ footer small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.8
 <section id="story">
   <div class="wrap story">
     <div class="photo" role="img" aria-label="Okiemute and Anthony" style="background-image:url('anthonywedsmute-4.jpg')"></div>
-    <div>
+    <div class="story-text">
       <h2>Our story</h2>
-      <p>[How Okiemute and Anthony met. Two or three sentences.]</p>
-      <p>[How the relationship grew, and the proposal.]</p>
-      <p>[A line inviting guests to celebrate with them.]</p>
+
+      <h3>Where it began</h3>
+      <p>Our story began in a run-down lodge in the back streets of Aluu, Uniport axis. I (Okiemute) had just begun my Uniport journey and moved in with amazing roommates who happened to be members of the Redeemed Christian Fellowship (RCF), the same fellowship he (Anthony) and I were part of.</p>
+      <p>He came to visit them, and somewhere in that ordinary moment, our paths crossed. He probably thought I was a weird girl, and I thought he was unbelievable.</p>
+
+      <h3>Friendship first</h3>
+      <p>A few years later, that first meeting has become the beginning of a love story neither of us saw coming. Ours wasn’t love at first sight. There were no fireworks or butterflies. Ours was a love we built, slowly and intentionally, on friendship, respect and understanding.</p>
+      <p>Somewhere between the endless gist, the anime marathons, the laughter and the comfort of simply being ourselves, we began to see each other differently. And without quite knowing when it happened, a friendship we had come to cherish was slowly becoming something more.</p>
+
+      <h3>A seed from the Lord</h3>
+      <p>To us, our love is a precious seed the Lord placed in our hands for His purpose, one we have nurtured to the best of our abilities. We have grown from strangers to fellowship members, to gist partners, to best friends, and now our best chapter yet is about to begin.</p>
+
+      <p class="closing">Together with our family and friends, we invite you to witness the beginning of our happily ever after. Join us as we take our <span class="oath">Oath of Forever</span>.</p>
     </div>
   </div>
 </section>
@@ -283,6 +297,7 @@ footer small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.8
 <section id="gallery" class="alt">
   <div class="wrap">
     <h2>Gallery</h2>
+    <p>[Optional line. After the wedding, swap these for event photos.]</p>
     <div class="gallery">
       <div class="photo" role="img" aria-label="Gallery photo 1" style="background-image:url('anthonywedsmute-1.png')"></div>
       <div class="photo" role="img" aria-label="Gallery photo 2" style="background-image:url('anthonywedsmute-2.jpg')"></div>
