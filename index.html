@@ -98,7 +98,11 @@ nav a:hover{color:var(--accent)}
 .swatches figure{text-align:center;font-size:.9rem}
 .swatches i{display:block;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);margin:0 auto 6px}
 
-/* gallery */
+/* gallery collage */
+.collage{margin:1.5rem auto 0;max-width:520px}
+.collage img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+
+/* gallery (old grid, no longer used) */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.5rem}
 .gallery .photo{aspect-ratio:1;min-height:0}
 .gallery .photo:nth-child(1),.gallery .photo:nth-child(6){grid-row:span 2;aspect-ratio:auto}
@@ -217,12 +221,12 @@ footer small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.8
 <!-- ============ OUR STORY ============ -->
 <section id="story">
   <div class="wrap story">
-    <div class="photo" role="img" aria-label="Okiemute and Anthony" style="background-image:url('anthonywedsmute-4.jpg')"></div>
+    <div class="photo" role="img" aria-label="Okiemute and Anthony" style="background-image:url('anthonywedsmute-b1.jpg')"></div>
     <div class="story-text">
       <h2>Our story</h2>
 
       <h3>Where it began</h3>
-      <p>Our story began in a run-down lodge in the back streets of Aluu, Uniport axis. I (Okiemute) had just begun my Uniport journey and moved in with amazing roommates who happened to be members of the Redeemed Christian Fellowship (RCF), the same fellowship he (Anthony) and I were part of.</p>
+      <p>Our story began in a run-down lodge in the back streets of Aluu, Uniport axis. I had just begun my Uniport journey and moved in with amazing roommates who happened to be members of the Redeemed Christian Fellowship (RCF), the same fellowship he and I were part of.</p>
       <p>He came to visit them, and somewhere in that ordinary moment, our paths crossed. He probably thought I was a weird girl, and I thought he was unbelievable.</p>
 
       <h3>Somewhere Along The Way</h3>
@@ -297,13 +301,11 @@ footer small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.8
 <section id="gallery" class="alt">
   <div class="wrap">
     <h2>Gallery</h2>
-    <div class="gallery">
-      <div class="photo" role="img" aria-label="Gallery photo 1" style="background-image:url('anthonywedsmute-1.png')"></div>
-      <div class="photo" role="img" aria-label="Gallery photo 2" style="background-image:url('anthonywedsmute-2.jpg')"></div>
-      <div class="photo" role="img" aria-label="Gallery photo 3" style="background-image:url('anthonywedsmute-3.jpg')"></div>
-      <div class="photo" role="img" aria-label="Gallery photo 4" style="background-image:url('anthonywedsmute-4.jpg')"></div>
-      <div class="photo" role="img" aria-label="Gallery photo 5" style="background-image:url('anthonywedsmute-5.jpg')"></div>
-    </div>
+    <figure class="collage">
+      <a href="anthonywedsmute-b2.png" target="_blank" rel="noopener" aria-label="Open the collage full size">
+        <img src="anthonywedsmute-b2.png" alt="Collage of photos of Okiemute and Anthony with the words Oath of Forever" loading="lazy">
+      </a>
+    </figure>
   </div>
 </section>
 
